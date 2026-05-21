@@ -268,7 +268,7 @@
     .features h2 { text-align: center; color: var(--dark); margin-bottom: 48px; }
     .features-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
     .feature-card {
@@ -488,6 +488,7 @@
       .event-strip .sep { display: none; }
       .sticky-bar span { display: none; }
       .nutritionist-inner { grid-template-columns: 1fr; gap: 32px; }
+      .features-grid { grid-template-columns: 1fr; }
       .nutritionist-photo { max-width: 200px; aspect-ratio: 1/1; object-position: center top; border-radius: 50%; margin: 0 auto; box-shadow: 0 4px 20px rgba(42,31,31,0.15); }
     }
   </style>
@@ -568,6 +569,16 @@
           <div class="icon">🎯</div>
           <h3>Una direzione chiara</h3>
           <p>Esci con un punto di partenza reale: sai cosa fare, perché e come farlo in modo sostenibile.</p>
+        </div>
+        <div class="feature-card reveal stagger-1">
+          <div class="icon">🌸</div>
+          <h3>Approccio naturale</h3>
+          <p>Nessun farmaco di default. Prima si valuta cosa può fare l'alimentazione e l'integrazione mirata.</p>
+        </div>
+        <div class="feature-card reveal stagger-2">
+          <div class="icon">🔒</div>
+          <h3>Colloquio riservato</h3>
+          <p>La consulenza è individuale e privata. Quello che racconti rimane tra te e la professionista.</p>
         </div>
       </div>
     </div>
