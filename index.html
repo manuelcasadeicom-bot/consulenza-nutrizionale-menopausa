@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -374,13 +373,6 @@
     }
     .booking h2 { color: var(--dark); margin-bottom: 10px; }
     .booking .sub { color: var(--muted); margin-bottom: 40px; font-size: 0.98rem; }
-    .calendly-wrapper {
-      max-width: 720px;
-      margin: 0 auto 32px;
-      border: 1px solid var(--border);
-      border-radius: 12px;
-      overflow: hidden;
-    }
     .booking .phone-note { font-size: 0.85rem; color: var(--muted); }
     .booking .phone-note a { color: var(--rose); text-decoration: none; }
     .booking .phone-note a:hover { text-decoration: underline; }
@@ -518,7 +510,7 @@
     <div class="reveal">
       <span class="hero-badge">Consulenza Gratuita · 5 Giugno 2025</span>
       <h1>Ogni donna vive la menopausa<br><em>a modo suo.</em></h1>
-      <p class="lead">Per questo la consulenza è gratuita, individuale e pensata per te. Un'occasione per ritrovare energia e leggerezza con il supporto di chi conosce davvero il tuo corpo.</p>
+      <p class="lead"><strong>Per questo la consulenza è gratuita, individuale e pensata per te.</strong> Un'occasione per ritrovare energia e leggerezza con il supporto di chi conosce davvero il tuo corpo.</p>
 
       <div class="event-strip">
         <div class="item">
@@ -676,14 +668,9 @@
       <h2>Scegli il tuo orario</h2>
       <p class="sub">La consulenza è completamente gratuita. Bastano pochi secondi per prenotare.</p>
 
-      <div class="calendly-wrapper">
-        <div class="calendly-inline-widget"
-             data-url="https://calendly.com/wellbeingsanmarino/30min"
-             style="min-width:320px;height:700px;">
-        </div>
-      </div>
+      <a href="https://calendly.com/wellbeingsanmarino/30min" class="btn-primary" target="_blank" rel="noopener">Scegli il tuo orario →</a>
 
-      <p class="phone-note">
+      <p class="phone-note" style="margin-top: 24px;">
         Preferisci prenotare via telefono o WhatsApp?
         Contattaci al <a href="tel:+390549944161">0549 944161</a>
         o scrivici su <a href="https://api.whatsapp.com/send/?phone=393384659202&text&type=phone_number&app_absent=0" target="_blank" rel="noopener">WhatsApp</a>.
@@ -702,19 +689,21 @@
 
   <!-- ===== FOOTER ===== -->
   <footer class="site-footer">
-    <p><strong>WellBeingSm (WBS S.r.l.)</strong> — <a href="https://wellbeingsm.com/dove-siamo/" target="_blank" rel="noopener">San Marino</a></p>
-    <p>
-      <a href="https://wellbeingsm.com" target="_blank" rel="noopener">wellbeingsm.com</a> ·
-      <a href="mailto:info@wellbeingsm.com">info@wellbeingsm.com</a>
+    <p>© 2026 <strong>WellBeingSm</strong> | Fitness &amp; Longevity di WBS S.r.l.</p>
+    <p style="margin-top: 6px;">
+      Via Ottava Gualdaria, 17/A · 47895 Domagnano, <a href="https://wellbeingsm.com/dove-siamo/" target="_blank" rel="noopener">San Marino (RSM)</a>
     </p>
-    <p style="margin-top: 14px; font-size: 0.74rem; opacity: 0.7;">
-      © 2025 WBS S.r.l. · Tutti i diritti riservati ·
-      <a href="https://wellbeingsm.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a>
+    <p style="margin-top: 4px;">
+      COE: 29948 · Capitale sociale € 26.000,00 · Iscrizione Registro Società n. 9025 del 18/07/22
+    </p>
+    <p style="margin-top: 14px;">
+      <a href="https://www.iubenda.com/privacy-policy/30393960/cookie-policy" target="_blank" rel="noopener">Cookie Policy</a>
+      <span style="margin: 0 8px; opacity: 0.4;">|</span>
+      <a href="https://wellbeingsm.com/condizioni-di-acquisto/" target="_blank" rel="noopener">Condizioni di acquisto</a>
+      <span style="margin: 0 8px; opacity: 0.4;">|</span>
+      <a href="https://wellbeingsm.com/informativa-trattamento-dati-personali/" target="_blank" rel="noopener">Trattamento dati</a>
     </p>
   </footer>
-
-  <!-- Calendly widget JS -->
-  <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
   <!-- Sticky bar & reveal-on-scroll -->
   <script>
