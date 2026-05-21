@@ -56,13 +56,36 @@
     }
     section { padding: 80px 24px; }
 
-    /* ---- Reveal animation ---- */
+    /* ---- Reveal animations ---- */
     .reveal {
       opacity: 0;
-      transform: translateY(22px);
-      transition: opacity 0.7s ease, transform 0.7s ease;
+      transform: translateY(48px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
     }
-    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-left {
+      opacity: 0;
+      transform: translateX(-48px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal-right {
+      opacity: 0;
+      transform: translateX(48px);
+      transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .reveal.visible,
+    .reveal-left.visible,
+    .reveal-right.visible {
+      opacity: 1;
+      transform: translate(0, 0);
+    }
+    /* Stagger delays per card e step */
+    .stagger-1 { transition-delay: 0.05s; }
+    .stagger-2 { transition-delay: 0.15s; }
+    .stagger-3 { transition-delay: 0.25s; }
+    .stagger-4 { transition-delay: 0.35s; }
 
     /* ---- Buttons ---- */
     .btn-primary {
@@ -78,12 +101,20 @@
       border-radius: 4px;
       text-decoration: none;
       box-shadow: 0 4px 18px rgba(192,120,144,0.32);
-      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: background 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+                  letter-spacing 0.35s ease;
     }
     .btn-primary:hover {
       background: var(--rose-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(192,120,144,0.42);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 36px rgba(192,120,144,0.5);
+      letter-spacing: 0.13em;
+    }
+    .btn-primary:active {
+      transform: translateY(-1px) scale(0.99);
+      box-shadow: 0 4px 14px rgba(192,120,144,0.35);
     }
 
     /* ---- Sticky bar ---- */
@@ -528,22 +559,22 @@
     <div class="container">
       <h2 class="reveal">Cosa ottieni dalla consulenza</h2>
       <div class="features-grid">
-        <div class="feature-card reveal">
+        <div class="feature-card reveal stagger-1">
           <div class="icon">🌿</div>
           <h3>Ascolto vero</h3>
           <p>30 minuti tutti per te. Racconti i tuoi sintomi, le tue abitudini, i tuoi obiettivi. Senza fretta.</p>
         </div>
-        <div class="feature-card reveal">
+        <div class="feature-card reveal stagger-2">
           <div class="icon">🔬</div>
           <h3>Analisi personalizzata</h3>
           <p>Non esiste un protocollo uguale per tutte. L'analisi parte dal tuo corpo, non da uno schema standard.</p>
         </div>
-        <div class="feature-card reveal">
+        <div class="feature-card reveal stagger-3">
           <div class="icon">💡</div>
           <h3>Consigli concreti</h3>
           <p>Indicazioni pratiche su alimentazione e integratori specifici per la tua fase di menopausa.</p>
         </div>
-        <div class="feature-card reveal">
+        <div class="feature-card reveal stagger-4">
           <div class="icon">🎯</div>
           <h3>Una direzione chiara</h3>
           <p>Esci con un punto di partenza reale: sai cosa fare, perché e come farlo in modo sostenibile.</p>
@@ -555,12 +586,12 @@
   <!-- ===== FOR WHOM ===== -->
   <section class="for-whom">
     <div class="for-whom-inner">
-      <div class="reveal">
+      <div class="reveal-left">
         <h2>È pensata per te<br>se ti riconosci in questo</h2>
         <p>Molte donne arrivano alla menopausa senza una guida. I sintomi cambiano da persona a persona, e spesso le risposte online sono troppo generiche per essere davvero utili.</p>
         <p>Questa consulenza è nata per colmare quel vuoto: non un consiglio standard, ma un confronto vero con un professionista della nutrizione.</p>
       </div>
-      <div class="reveal">
+      <div class="reveal-right">
         <ul class="check-list">
           <li>Stai vivendo i primi segnali della menopausa (vampate, stanchezza, sbalzi d'umore)</li>
           <li>Hai difficoltà a gestire il peso nonostante dieta e attività fisica</li>
@@ -579,17 +610,17 @@
     <div class="container reveal">
       <h2>Come funziona</h2>
       <div class="steps">
-        <div class="step">
+        <div class="step reveal stagger-1">
           <div class="step-number">1</div>
           <h3>Prenota online</h3>
           <p>Scegli il tuo slot da 30 minuti con il calendario qui sotto. Gratuito, immediato, riservato.</p>
         </div>
-        <div class="step">
+        <div class="step reveal stagger-2">
           <div class="step-number">2</div>
           <h3>Vieni il 5 giugno</h3>
           <p>Ti aspettiamo da WellBeingSm a San Marino, nell'orario che hai scelto.</p>
         </div>
-        <div class="step">
+        <div class="step reveal stagger-3">
           <div class="step-number">3</div>
           <h3>Ritorni con un piano</h3>
           <p>Indicazioni concrete e personalizzate per ritrovare energia, benessere e leggerezza.</p>
@@ -602,13 +633,13 @@
   <section class="nutritionist">
     <div class="nutritionist-inner">
 
-      <div class="reveal">
+      <div class="reveal-left">
         <img src="Eleonora.jpg"
              alt="Dott.ssa Eleonora Bucci — Biologa Nutrizionista"
              class="nutritionist-photo">
       </div>
 
-      <div class="reveal nutritionist-content">
+      <div class="reveal-right nutritionist-content">
         <h2>Dott.ssa Eleonora Bucci</h2>
         <span class="title-tag">Biologa Nutrizionista</span>
 
@@ -689,13 +720,16 @@
 
   <!-- Sticky bar & reveal-on-scroll -->
   <script>
-    // Reveal animation
+    // Scroll reveal — osserva tutte le varianti direzionali
     const observer = new IntersectionObserver((entries) => {
       entries.forEach(e => {
-        if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); }
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
       });
-    }, { threshold: 0.1 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach(el => observer.observe(el));
 
     // Sticky bar: show after scrolling past hero
     const stickyBar = document.getElementById('stickyBar');
